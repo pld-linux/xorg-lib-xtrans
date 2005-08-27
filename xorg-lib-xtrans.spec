@@ -14,8 +14,6 @@ BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-
 %description
 xtrans library provides network API translation layer to insulate X
 applications and libraries from OS network vagaries.
