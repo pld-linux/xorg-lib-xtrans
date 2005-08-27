@@ -1,7 +1,7 @@
-# $Rev: 3233 $, $Date: 2005-08-15 12:17:57 $
+# $Rev: 3233 $, $Date: 2005-08-27 10:38:00 $
 #
-Summary:	xtrans library
-Summary(pl):	Biblioteka xtrans
+Summary:	xtrans library - network API translation layer
+Summary(pl):	Biblioteka xtrans - warstwa t³umaczenia sieciowego API
 Name:		xorg-lib-xtrans
 Version:	0.99.0
 Release:	0.04
@@ -19,24 +19,29 @@ BuildRoot:	%{tmpdir}/xtrans-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-xtrans library.
+xtrans library provides network API translation layer to insulate X
+applications and libraries from OS network vagaries.
 
 %description -l pl
-Biblioteka xtrans.
-
+Biblioteka xtrans dostarcza warstwê t³umaczenia sieciowego API s³u¿±c±
+do oddzielenia aplikacji i bibliotek X od kaprysów sieciowych systemu
+operacyjnego.
 
 %package devel
-Summary:	xtrans library
-Summary(pl):	Biblioteka xtrans
+Summary:	xtrans library - network API translation layer
+Summary(pl):	Biblioteka xtrans - warstwa t³umaczenia sieciowego API
 Group:		X11/Development/Libraries
 Requires:	xorg-proto-xproto-devel
+Obsoletes:	libXtrans-devel
 
 %description devel
-xtrans library
+xtrans library provides network API translation layer to insulate X
+applications and libraries from OS network vagaries.
 
 %description devel -l pl
-Biblioteka xtrans
-
+Biblioteka xtrans dostarcza warstwê t³umaczenia sieciowego API s³u¿±c±
+do oddzielenia aplikacji i bibliotek X od kaprysów sieciowych systemu
+operacyjnego.
 
 %prep
 %setup -q -n xtrans-%{version}
