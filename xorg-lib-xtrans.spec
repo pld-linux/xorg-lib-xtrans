@@ -1,5 +1,3 @@
-# $Rev: 3233 $, $Date: 2005-08-27 17:42:48 $
-#
 Summary:	xtrans library - network API translation layer
 Summary(pl):	Biblioteka xtrans - warstwa t³umaczenia sieciowego API
 Name:		xorg-lib-xtrans
@@ -46,7 +44,6 @@ operacyjnego.
 %prep
 %setup -q -n xtrans-%{version}
 
-
 %build
 %{__aclocal}
 %{__autoconf}
@@ -64,14 +61,11 @@ rm -rf $RPM_BUILD_ROOT
 	pkgconfigdir=%{_pkgconfigdir} \
 	aclocaldir=%{_aclocaldir}
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
 %post	-p /sbin/ldconfig
 %postun -p /sbin/ldconfig
-
 
 %files devel
 %defattr(644,root,root,755)
