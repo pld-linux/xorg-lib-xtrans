@@ -1,4 +1,4 @@
-# $Rev: 3233 $, $Date: 2005-08-27 10:38:00 $
+# $Rev: 3233 $, $Date: 2005-08-27 17:42:48 $
 #
 Summary:	xtrans library - network API translation layer
 Summary(pl):	Biblioteka xtrans - warstwa t³umaczenia sieciowego API
@@ -12,7 +12,7 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/xtrans-%{version}.tar.bz2
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/xtrans-%{version}-root-%(id -u -n)
 
