@@ -5,8 +5,8 @@ Version:	1.0.0
 Release:	0.1
 License:	MIT
 Group:		X11/Development/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC4/lib/xtrans-%{version}.tar.bz2
-# Source0-md5:	e3f4876d6fc3e68c36c51fa892a15da5
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/lib/xtrans-%{version}.tar.bz2
+# Source0-md5:	da1628280f945e8d48a4c2e80ee28873
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
