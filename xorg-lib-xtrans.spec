@@ -1,5 +1,5 @@
 Summary:	xtrans library - network API translation layer
-Summary(pl.UTF-8):   Biblioteka xtrans - warstwa tłumaczenia sieciowego API
+Summary(pl.UTF-8):	Biblioteka xtrans - warstwa tłumaczenia sieciowego API
 Name:		xorg-lib-xtrans
 Version:	1.0.3
 Release:	1
@@ -25,7 +25,7 @@ operacyjnego.
 
 %package devel
 Summary:	xtrans library - network API translation layer
-Summary(pl.UTF-8):   Biblioteka xtrans - warstwa tłumaczenia sieciowego API
+Summary(pl.UTF-8):	Biblioteka xtrans - warstwa tłumaczenia sieciowego API
 Group:		X11/Development/Libraries
 Requires:	xorg-proto-xproto-devel
 Obsoletes:	libXtrans-devel
