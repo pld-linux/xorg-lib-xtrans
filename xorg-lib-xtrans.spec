@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING ChangeLog README
 %{_includedir}/X11/Xtrans
 %{_pkgconfigdir}/xtrans.pc
 %{_aclocaldir}/xtrans.m4
