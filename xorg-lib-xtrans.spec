@@ -1,17 +1,18 @@
 Summary:	xtrans library - network API translation layer
 Summary(pl.UTF-8):	Biblioteka xtrans - warstwa tłumaczenia sieciowego API
 Name:		xorg-lib-xtrans
-Version:	1.2.4
+Version:	1.2.5
 Release:	1
 License:	MIT
 Group:		X11/Development/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/xtrans-%{version}.tar.bz2
-# Source0-md5:	b3b57e78dc06885e79f8393a83619715
+# Source0-md5:	2d1e57e82acc5f21797e92341415af2f
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+BuildRequires:	groff
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	xorg-util-util-macros >= 1.2
+BuildRequires:	xorg-util-util-macros >= 1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,7 +47,8 @@ operacyjnego.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--enable-docs
 
 %{__make}
 
@@ -55,16 +57,14 @@ operacyjnego.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir} \
-	aclocaldir=%{_aclocaldir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog README Xtrans.html
 %{_includedir}/X11/Xtrans
-%{_pkgconfigdir}/xtrans.pc
+%{_npkgconfigdir}/xtrans.pc
 %{_aclocaldir}/xtrans.m4
