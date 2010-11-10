@@ -1,19 +1,20 @@
 Summary:	xtrans library - network API translation layer
 Summary(pl.UTF-8):	Biblioteka xtrans - warstwa tłumaczenia sieciowego API
 Name:		xorg-lib-xtrans
-Version:	1.2.5
+Version:	1.2.6
 Release:	1
 License:	MIT
 Group:		X11/Development/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/xtrans-%{version}.tar.bz2
-# Source0-md5:	2d1e57e82acc5f21797e92341415af2f
+# Source0-md5:	c66f9ffd2da4fb012220c6c40ebc7609
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	groff
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.446
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xmlto >= 0.0.20
+BuildRequires:	xorg-sgml-doctools >= 1.5
+BuildRequires:	xorg-util-util-macros >= 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -65,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README Xtrans.html
+%doc AUTHORS COPYING ChangeLog README doc/xtrans.html
 %{_includedir}/X11/Xtrans
 %{_npkgconfigdir}/xtrans.pc
 %{_aclocaldir}/xtrans.m4
