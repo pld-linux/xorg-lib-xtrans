@@ -1,16 +1,17 @@
 Summary:	xtrans library - network API translation layer
 Summary(pl.UTF-8):	Biblioteka xtrans - warstwa tłumaczenia sieciowego API
 Name:		xorg-lib-xtrans
-Version:	1.3.5
-Release:	2
+Version:	1.4.0
+Release:	1
 License:	MIT
 Group:		X11/Development/Libraries
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/xtrans-%{version}.tar.bz2
-# Source0-md5:	c5ba432dd1514d858053ffe9f4737dd8
-URL:		http://xorg.freedesktop.org/
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/xtrans-%{version}.tar.bz2
+# Source0-md5:	ce2fb8100c6647ee81451ebe388b17ad
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	docbook-dtd43-xml
+BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.446
 BuildRequires:	xmlto >= 0.0.22
@@ -51,10 +52,10 @@ operacyjnego.
 %{__autoconf}
 %{__automake}
 %configure \
-	--enable-docs
+	--enable-docs \
+	--without-fop
 
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -62,12 +63,15 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# (.html version) packaged as %doc
+%{__rm} $RPM_BUILD_ROOT%{_docdir}/xtrans/xtrans.*
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README doc/xtrans.html
+%doc AUTHORS COPYING ChangeLog README.md doc/xtrans.html
 %{_includedir}/X11/Xtrans
 %{_npkgconfigdir}/xtrans.pc
 %{_aclocaldir}/xtrans.m4
