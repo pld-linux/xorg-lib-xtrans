@@ -13,13 +13,13 @@ BuildRequires:	automake
 BuildRequires:	docbook-dtd43-xml
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.446
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto >= 0.0.22
 BuildRequires:	xorg-sgml-doctools >= 1.8
 BuildRequires:	xorg-util-util-macros >= 1.12
 BuildRequires:	xz
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +37,6 @@ Summary(pl.UTF-8):	Biblioteka xtrans - warstwa tłumaczenia sieciowego API
 Group:		X11/Development/Libraries
 Requires:	xorg-proto-xproto-devel
 Obsoletes:	libXtrans-devel < 0.2
-BuildArch:	noarch
 
 %description devel
 xtrans library provides network API translation layer to insulate X
@@ -56,6 +55,10 @@ operacyjnego.
 %{__autoconf}
 %{__automake}
 %configure \
+%if "%{_host_cpu}" != "x32"
+	--host=%{_host} \
+	--build=%{_host} \
+%endif
 	--enable-docs \
 	--without-fop
 
